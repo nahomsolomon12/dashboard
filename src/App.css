@@ -1,0 +1,38 @@
+html {
+  background-image: url(./assets/space.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+}
+
+.marvel-main {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  padding: 30px;
+}
+
+.sidebar {
+  background-color: rgba(188, 188, 195, 0.503);
+  width: 300px;
+  height: 800px;
+  border-radius: 15px;
+
+}
+
+.dash {
+  background-color: rgba(188, 188, 195, 0.503);
+  width: 800px;
+  height: 800px;
+  border-radius: 15px;
+
+}
+
+.sidebar ul li {
+  list-style-type: none;
+  font-size: 40px;
+  padding: 10px;
+}
