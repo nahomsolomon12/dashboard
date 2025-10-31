@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Dashboard from "./components/weatherHist"; // 👈 adjust path if needed
 
 import './App.css'
 
@@ -6,23 +7,17 @@ function App() {
 
   return (
     <>
-      <h1>Marvel's Hero Database</h1>
       <div className='marvel-main'>
-
-
         <div className='sidebar'>
 
           <ul>
-            <li>&#127968;Home</li>
-            <li>&#128269;Search</li>
-            <li>&#128295;About</li>
+            <li><a href='./App.jsx'>&#127968;Home</a></li>
           </ul>
         </div>
 
-        <div className='dash'>
-          <h1>Marvel Characters Go Here</h1>
-        </div>
 
+
+        <Dashboard />
 
       </div>
 
