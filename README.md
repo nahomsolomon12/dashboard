@@ -1,1 +1,1 @@
-(/gif.gif)
+![Alt text](gif.gif)
