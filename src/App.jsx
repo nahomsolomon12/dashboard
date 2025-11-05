@@ -1,12 +1,14 @@
-import { useState } from 'react'
-import Dashboard from "./components/weatherHist"; // 👈 adjust path if needed
-
+import Dashboard from "./components/weatherHist";
+import LineGraph from "./components/linechart";
+import BarGraph from "./components/bar";
 import './App.css'
 
 function App() {
 
   return (
     <>
+
+      <h1>Weather Data Visualization</h1>
       <div className='marvel-main'>
         <div className='sidebar'>
 
@@ -15,9 +17,9 @@ function App() {
           </ul>
         </div>
 
-
-
         <Dashboard />
+        <LineGraph />
+        <BarGraph />
 
       </div>
 

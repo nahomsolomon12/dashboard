@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import '../App.css'
 
 function Dashboard() {
     const [weatherData, setWeatherData] = useState([]);
@@ -39,7 +40,6 @@ function Dashboard() {
 
     return (
         <div style={{ padding: "20px" }}>
-            <h1>Weather Dashboard</h1>
 
             {/* Search and Filter Controls */}
             <div style={{ marginBottom: "20px" }}>
@@ -67,6 +67,7 @@ function Dashboard() {
                         <th>Average Temp (°C)</th>
                         <th>Max Temp (°C)</th>
                         <th>Min Temp (°C)</th>
+                        <th>Details</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -76,6 +77,7 @@ function Dashboard() {
                             <td style={{ padding: "8px" }}>{day.temp}</td>
                             <td style={{ padding: "8px" }}>{day.max_temp}</td>
                             <td style={{ padding: "8px" }}>{day.min_temp}</td>
+                            <td style={{ padding: "8px" }}>🔗</td>
                         </tr>
                     ))}
                 </tbody>
