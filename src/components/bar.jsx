@@ -25,12 +25,14 @@ export default function ApiBarGraph() {
     }, []);
 
     return (
-        <BarChart width={600} height={300} data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" />
-            <YAxis />
-            <Tooltip />
-            <Bar dataKey="value" fill="#82ca9d" />
-        </BarChart>
+        <div className='bar'>
+            <BarChart width={600} height={300} data={data}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="date" />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey="value" fill="#82ca9d" />
+            </BarChart>
+        </div>
     );
 }

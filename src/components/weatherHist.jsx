@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import '../App.css'
 
 function Dashboard() {
@@ -6,6 +7,8 @@ function Dashboard() {
     const [error, setError] = useState(null);
     const [search, setSearch] = useState(""); // For search input
     const [filterTemp, setFilterTemp] = useState(""); // For filtering by min temperature
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         const apiKey = import.meta.env.VITE_WEATHERBIT_API_KEY;
@@ -21,6 +24,7 @@ function Dashboard() {
             .then((data) => {
                 // Weatherbit returns an object with a "data" array
                 setWeatherData(data.data || []);
+                console.log("Fetched weather data:", data);
             })
             .catch((err) => {
                 console.error("Error fetching weather:", err);
@@ -37,6 +41,7 @@ function Dashboard() {
         .filter((day) =>
             filterTemp ? day.min_temp >= parseFloat(filterTemp) : true
         ); // filter by min temp if provided
+
 
     return (
         <div style={{ padding: "20px" }}>
@@ -77,11 +82,18 @@ function Dashboard() {
                             <td style={{ padding: "8px" }}>{day.temp}</td>
                             <td style={{ padding: "8px" }}>{day.max_temp}</td>
                             <td style={{ padding: "8px" }}>{day.min_temp}</td>
-                            <td style={{ padding: "8px" }}>🔗</td>
+                            <td style={{ padding: "8px" }}><span
+                                style={{ cursor: "pointer" }}
+                                onClick={() => navigate("/details", { state: day })}
+                            >
+                                🔗
+                            </span></td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+
+
         </div>
     );
 }

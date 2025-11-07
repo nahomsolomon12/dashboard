@@ -26,12 +26,14 @@ export default function ApiLineGraph() {
   }, []);
 
   return (
-    <LineChart width={600} height={300} data={data}>
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="date" />
-      <YAxis />
-      <Tooltip />
-      <Line type="monotone" dataKey="value" stroke="#8884d8" strokeWidth={2} />
-    </LineChart>
+    <div className='line'>
+      <LineChart width={600} height={300} data={data}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" />
+        <YAxis />
+        <Tooltip />
+        <Line type="monotone" dataKey="value" stroke="#8884d8" strokeWidth={2} />
+      </LineChart>
+    </div>
   );
 }
